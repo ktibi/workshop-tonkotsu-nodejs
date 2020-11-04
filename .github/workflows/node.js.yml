@@ -27,3 +27,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - run: npm run report-coverage  
+    - name: Codecov Action
+      uses: codecov/codecov-action@v1
+      with:
+        file: ./coverage.lcov
+
